@@ -1,7 +1,26 @@
 import React from "react";
+import { navLinks } from "../../constants";
 
 const Navbar = () => {
-  return <div>Navbar</div>;
+  return (
+    <nav>
+      <div>
+        <a href="#home" className="flex items-center gap-2">
+          <img src="/images/logo.png" alt="Logo" />
+          <p>Vlevet Pour</p>
+        </a>
+        <ul>
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a href={`#${link.id}`} className="flex items-center gap-2">
+                {link.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
